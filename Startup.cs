@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -7,6 +8,7 @@ using Saite_1.Data;
 using Saite_1.Data.interfaces;
 using Saite_1.Data.mocks;
 using Saite_1.Data.Repository;
+using System.IO;
 
 namespace Saite_1
 {
@@ -20,6 +22,9 @@ namespace Saite_1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDBContent>(options => options.UseSqlServer(_confsting.GetConnectionString("DefaultConnection")));
+
+            services.AddDataProtection().PersistKeysToFileSystem(new DirectoryInfo("DataProtectionKeys")); //somme.com
+
             /*services.AddTransient<IAllCars, MockCars>();
             services.AddTransient<ICarsCategory, MockCategory>();*/
             services.AddTransient<IAllCars, CarRepository>();
