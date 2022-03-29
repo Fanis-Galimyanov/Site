@@ -11,7 +11,6 @@ namespace Saite_1.Data.Repository
         {
             this._appDbContent = appDbContent;
         }
-
-        public IEnumerable<Category> AllCategories => _appDbContent.Categories;
+        public IEnumerable<Category> AllCategories => _appDbContent.Category;
     }
 }

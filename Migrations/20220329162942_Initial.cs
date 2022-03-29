@@ -7,7 +7,7 @@ namespace Saite_1.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Categories",
+                name: "Category",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
@@ -17,7 +17,7 @@ namespace Saite_1.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Categories", x => x.id);
+                    table.PrimaryKey("PK_Category", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -39,9 +39,9 @@ namespace Saite_1.Migrations
                 {
                     table.PrimaryKey("PK_Car", x => x.id);
                     table.ForeignKey(
-                        name: "FK_Car_Categories_categoryID",
+                        name: "FK_Car_Category_categoryID",
                         column: x => x.categoryID,
-                        principalTable: "Categories",
+                        principalTable: "Category",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -58,7 +58,7 @@ namespace Saite_1.Migrations
                 name: "Car");
 
             migrationBuilder.DropTable(
-                name: "Categories");
+                name: "Category");
         }
     }
 }

@@ -9,7 +9,7 @@ using Saite_1.Data;
 namespace Saite_1.Migrations
 {
     [DbContext(typeof(AppDBContent))]
-    [Migration("20220322180843_Initial")]
+    [Migration("20220329162942_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -73,7 +73,7 @@ namespace Saite_1.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Category");
                 });
 
             modelBuilder.Entity("Saite_1.Data.Models.Car", b =>

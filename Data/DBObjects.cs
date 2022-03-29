@@ -8,10 +8,10 @@ namespace Saite_1.Data
     {
         public static void Initial(AppDBContent content)
         {
-            if (!content.Categories.Any()) 
+       /*     if (!content.Category.Any()) 
             {
-                content.Categories.AddRange(Categories.Select);
-            }
+                content.Category.AddRange(Categories.Select(c =>c.Value));
+            }*/
         }
     }
 }

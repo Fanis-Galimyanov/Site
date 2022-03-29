@@ -71,7 +71,7 @@ namespace Saite_1.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Category");
                 });
 
             modelBuilder.Entity("Saite_1.Data.Models.Car", b =>
