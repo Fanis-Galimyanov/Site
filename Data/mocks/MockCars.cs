@@ -75,7 +75,13 @@ namespace Saite_1.Data.mocks
                 };
             }
         }
-        public IEnumerable<Car> getFavCars { get; set; }
+        public IEnumerable<Car> getFavCars {
+            get
+            {
+                return Cars;
+            }
+            set { } 
+        }
 
         public Car getObjectCar(int carId)
         {
