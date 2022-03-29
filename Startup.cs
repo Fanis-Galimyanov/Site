@@ -40,6 +40,12 @@ namespace Saite_1
             {
                 endpoints.MapControllerRoute(name: "default", "{controller=Home}/{action=Index}");
             });
+
+            using (var scoupe = app.ApplicationServices.CreateScope())
+            {
+                AppDBContent content = scoupe.ServiceProvider.GetRequiredService<AppDBContent>();
+                DBObjects.Initial(content);
+            }
         }
     }
 }
